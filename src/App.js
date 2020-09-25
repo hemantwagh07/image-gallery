@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 import './App.css';
-import CardList from './CardList/cardList';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PhotographerList from './CardList/photographerList';
+import albumList from './CardList/albumList';
+import photoList from './CardList/photoList';
 
 class App extends Component {
   constructor() {
@@ -12,26 +14,19 @@ class App extends Component {
       searchField: ''
     }
   }
-  componentDidMount = () => {
-    axios.get('https://jsonplaceholder.typicode.com/users')
-      .then(response => {
-        // handle success
-        //console.log(response.data);
-        this.setState({ photographers: response.data });
-        //this.getproducts('', response.data[0].id)
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
-  }
+
   render() {
-    console.log(this.state.photographers);
     return (
-      <div><CardList photographers={this.state.photographers} /></div>
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path='/' component={PhotographerList} />
+            <Route path='/albums/photographer/:id' component={albumList} />
+            <Route path='/photos/album/:id' component={photoList} />
+          </Switch>
+        </Router>
+        {/* <CardList photographers={this.state.photographers} /> */}
+      </div>
     )
   }
 }

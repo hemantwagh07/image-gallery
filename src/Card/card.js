@@ -1,12 +1,13 @@
 import React from 'react'
 
-export default function Card(props) {
+export default function Card({ cardId, cardTitle, cardImage, cardBody }) {
     return (
         <div className="col-auto mb-3">
             <div className="card" style={{ width: 18 + 'rem' }}>
-                <img className="card-img-top" alt={props.photographer.username} src={`https://robohash.org/${props.photographer.username}.png?size=180x180&set=set5`} />
+                <img className="card-img-top" alt={cardId} src={cardImage} />
                 <div className="card-body">
-                    <p className="card-text">{props.photographer.name}</p>
+                    <h5 className="card-title">{cardTitle}</h5>
+                    <p className="card-text">{cardBody}</p>
                 </div>
             </div>
         </div>
