@@ -13,6 +13,7 @@ export default class photoList extends Component {
         axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${this.props.match.params.id}`)
             .then(response => {
                 // handle success
+                console.log(response.data);
                 this.setState({ photos: response.data });
             })
             .catch(function (error) {
@@ -25,7 +26,7 @@ export default class photoList extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container mt-5">
                 <div className="row">
                     {
                         this.state.photos.map((photo) => (

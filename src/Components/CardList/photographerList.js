@@ -29,11 +29,13 @@ export default class photographerList extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container mt-5">
+                <h3>List of Photographer</h3>
+                <p className="mb-4">Click on any to see related albums</p>
                 <div className="row">
                     {
                         this.state.photographers.map((photographer) => (
-                            <Link to={'/albums/photographer/' + photographer.id} key={photographer.id}>
+                            <Link to={'/photographers/albums/' + photographer.id} key={photographer.id}>
                                 <Card key={photographer.id}
                                     cardId={photographer.id}
                                     cardTitle={photographer.name}

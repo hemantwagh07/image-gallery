@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import PhotographerList from './CardList/photographerList';
-import albumList from './CardList/albumList';
-import photoList from './CardList/photoList';
+import photographerList from './Components/CardList/photographerList';
+import photoList from './Components/CardList/photoList';
+import albumList from './Components/CardList/albumList';
+
 
 class App extends Component {
   constructor() {
@@ -20,9 +21,9 @@ class App extends Component {
       <div>
         <Router>
           <Switch>
-            <Route exact path='/' component={PhotographerList} />
-            <Route path='/albums/photographer/:id' component={albumList} />
-            <Route path='/photos/album/:id' component={photoList} />
+            <Route exact path='/' component={photographerList} />
+            <Route path='/photographers/albums/:id' component={albumList} />
+            <Route path='/albums/photos/:id' component={photoList} />
           </Switch>
         </Router>
         {/* <CardList photographers={this.state.photographers} /> */}

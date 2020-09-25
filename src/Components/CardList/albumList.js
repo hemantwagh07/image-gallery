@@ -26,11 +26,13 @@ export default class albumList extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container mt-5">
+                <h3>List of albums by a photographer</h3>
+                <p className="mb-4">Click on album to see photos inside it.</p>
                 <div className="row">
                     {
                         this.state.albums.map((album) => (
-                            <Link to={'/photos/album/' + album.id} key={album.id}>
+                            <Link to={'/albums/photos/' + album.id} key={album.id}>
                                 <Card key={album.id}
                                     cardId={album.id}
                                     cardTitle={album.title}
