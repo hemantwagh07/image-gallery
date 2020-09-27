@@ -15,7 +15,7 @@ export default class photographerList extends Component {
         axios.get('https://jsonplaceholder.typicode.com/users')
             .then(response => {
                 // handle success
-                //console.log(response.data);
+                console.log(response.data);
                 this.setState({ photographers: response.data });
                 //this.getproducts('', response.data[0].id)
             })

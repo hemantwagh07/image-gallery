@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <Router>
           <Switch>
-            <Route exact path='/' component={photographerList} />
+            <Route exact path='/image-gallery/' component={photographerList} />
             <Route path='/photographers/albums/:id' component={albumList} />
             <Route path='/albums/photos/:id' component={photoList} />
           </Switch>
