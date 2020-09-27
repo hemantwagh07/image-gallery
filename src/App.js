@@ -22,8 +22,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/image-gallery/' component={photographerList} />
-            <Route path='/photographers/albums/:id' component={albumList} />
-            <Route path='/albums/photos/:id' component={photoList} />
+            <Route path='/image-gallery/photographers/albums/:id' component={albumList} />
+            <Route path='/image-gallery/albums/photos/:id' component={photoList} />
           </Switch>
         </Router>
         {/* <CardList photographers={this.state.photographers} /> */}

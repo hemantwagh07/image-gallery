@@ -35,7 +35,7 @@ export default class photographerList extends Component {
                 <div className="row">
                     {
                         this.state.photographers.map((photographer) => (
-                            <Link to={'/photographers/albums/' + photographer.id} key={photographer.id}>
+                            <Link to={'/image-gallery/photographers/albums/' + photographer.id} key={photographer.id}>
                                 <Card key={photographer.id}
                                     cardId={photographer.id}
                                     cardTitle={photographer.name}

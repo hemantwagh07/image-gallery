@@ -32,7 +32,7 @@ export default class albumList extends Component {
                 <div className="row">
                     {
                         this.state.albums.map((album) => (
-                            <Link to={'/albums/photos/' + album.id} key={album.id}>
+                            <Link to={'/image-gallery/albums/photos/' + album.id} key={album.id}>
                                 <Card key={album.id}
                                     cardId={album.id}
                                     cardTitle={album.title}
